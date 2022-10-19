@@ -1,0 +1,109 @@
+@import 'normalize.css';
+
+:root {
+    --primary--background: rgba(186, 214, 240,0.2);
+    --primary:#0984e3 ;
+    --hover--primary: #d8faf9;
+    --black: #000;
+    --border--focus:#c9e0f7;
+    --tooltip--color:#d7e6f3;
+
+    //text color
+    --text--color: #333;
+    --white--text: #fff;
+    --gray--text: #636e72;
+    --gray--color: rgba(99, 110, 114,0.4);
+    
+    // Default Layout
+    --default--layout-header-height : 60px;
+    --default--layout-width : 1150px;
+    --default--layout-horizontal-spacer : 24px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'ProximaNova';
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    background-color: var(--primary--background);
+}
+button {
+    cursor: pointer;
+}
+
+button, input, [tabindex]  {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+// Font emmbeded
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-bold.woff2');
+    font-weight: 700;
+}
+
+
+
+a[href] {
+    color: var(--text--color);
+    text-decoration: none;
+}
+ul {
+    padding-left: 0;
+}
+li {
+    list-style: none;
+}
+
+
+// custom Tippy tooltip
+
+body{
+    .tippy-box {
+    background-color: var(--primary);
+    border-radius: 8px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+}
+    .tippy-box[data-placement^=bottom]>.tippy-arrow:before {
+    top: -7px;
+    left: 0;
+    border-width: 0 8px 8px;
+    border-bottom-color: var(--primary);
+    transform-origin: center bottom;
+}
+    .tippy-content {
+        padding: 8px 9px;
+    }
+} 
+// .tippy-arrow:before {
+//     content: "";
+//     position: absolute;
+//     border-color: transparent;
+//     border-style: red;
+// }

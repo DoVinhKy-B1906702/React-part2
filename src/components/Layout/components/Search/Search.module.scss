@@ -1,0 +1,94 @@
+.search, .search-result {
+    width: 361px;
+}
+
+.search {
+      position: relative;
+    
+      height: var(--search-height);
+      border-radius: var(--search-border-radius);
+      background-color: #e8ecee;
+      padding-left: 16px;
+      display: flex;
+      border: 1px solid transparent;
+      
+      input {
+          flex: 1;
+          height: 100%;
+          padding: 12px 36px 12px 0px;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          background-color: transparent;
+          font-family: ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+          caret-color: #6c5ce7;
+          color: var(--black);
+        
+      }
+      input:not(:placeholder-shown) ~ .search-btn {
+          color: #2d3436 ;
+      }
+      
+      
+      &::after {
+          content:"";
+          position: absolute;
+          right: var(--search-button-width);
+          top: var(--search-top-spacer);
+          width: 1px;
+          height: calc(var(--search-height) - ( var(--search-top-spacer) * 2 ));
+          background-color: #c0becb;
+      }
+
+      &:focus-within {
+          border-color: var(--border--focus) ;       
+      }
+}
+
+.search-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(44, 45, 45, 0.527);
+  padding: 5px 12px 5px 24px;
+}
+
+
+.clear,
+.loading {
+      position: absolute;
+      right: calc(var(--search-button-width) + 16px )  ;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #838c90;
+
+}
+.loading {
+    animation: spinner 0.5s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+.search-btn {
+  width: var(--search-button-width);
+  height: 100%;
+  border-top-right-radius: var(--search-border-radius);
+  border-bottom-right-radius: var(--search-border-radius);
+  padding: 11px 16px 11px 12px ;
+  cursor: pointer;
+  font-size: 2.2rem;
+  color: #b7b6b6;
+
+  &:hover {
+      background-color: var(--hover--primary);
+  }
+  &:active {
+      background-color: rgba(186, 214, 240,0.8) ;
+  }
+}
